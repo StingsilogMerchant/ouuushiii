@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group 4: Digital Readiness & Physics Innovation</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #0f172a;
+      --accent: #10b981;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+    header {
+      background: linear-gradient(135deg, #1e293b, #2563eb);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.1rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+
+    nav {
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0.8rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a { color: white; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
+    nav a:hover { color: #60a5fa; }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+    section { background: var(--card-bg); padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+    h2 { color: var(--primary); margin-bottom: 1rem; font-size: 1.6rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+
+    /* Interactive Physics Simulator */
+    .sim-box { background: #f1f5f9; padding: 1.5rem; border-radius: 8px; margin-top: 1rem; }
+    .slider-group { margin-bottom: 1rem; }
+    .slider-group label { display: block; font-weight: 600; margin-bottom: 0.3rem; }
+    input[type="range"] { width: 100%; max-width: 400px; }
+    .gauge-container { height: 24px; background: #cbd5e1; border-radius: 12px; overflow: hidden; margin-top: 1rem; }
+    .gauge-fill { height: 100%; width: 0%; background: var(--accent); transition: width 0.3s, background-color 0.3s; }
+
+    /* AI Marketing Tool */
+    .ai-box { display: flex; flex-direction: column; gap: 1rem; background: #eff6ff; padding: 1.5rem; border-radius: 8px; }
+    button { background: var(--primary); color: white; border: none; padding: 0.7rem 1.4rem; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s; width: fit-content; }
+    button:hover { background: #1d4ed8; }
+    .output-card { background: white; padding: 1rem; border-left: 4px solid var(--primary); border-radius: 4px; font-style: italic; }
+
+    /* Live Survey Dashboard */
+    .chart-bar { margin-bottom: 1rem; }
+    .bar-label { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 0.2rem; }
+    .bar-track { background: #e2e8f0; height: 20px; border-radius: 10px; overflow: hidden; }
+    .bar-fill { height: 100%; background: var(--primary); width: 0%; transition: width 1s ease-in-out; }
+
+    /* Group Cards Grid */
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .member-card { background: #f8fafc; border: 1px solid #e2e8f0; padding: 1rem; border-radius: 8px; text-align: center; }
+    .member-card h4 { color: var(--secondary); margin-bottom: 0.3rem; }
+    .member-card p { font-size: 0.85rem; color: #64748b; }
+
+    footer { text-align: center; padding: 2rem; color: #64748b; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Barangay Microenterprise Innovation Platform</h1>
+    <p>Group 4 Research Output: Digital Entrepreneurship, AI Utilization, and Applied Physics in Local Product Manufacturing</p>
+  </header>
+
+  <nav>
+    <a href="#story">The Story</a>
+    <a href="#physics">Physics Science</a>
+    <a href="#ai">AI Marketing</a>
+    <a href="#survey">Survey Data</a>
+    <a href="#team">Group Directory</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- Section 1: The Story -->
+    <section id="story">
+      <h2>📖 Act 1: The Story of Aling Rosa's Workshop</h2>
+      <p><strong>Aling Rosa</strong> is a local barangay microentrepreneur who crafts handmade eco-bags and custom garments near local commercial centers. While her craftsmanship is high quality, she faces key challenges in <em>scaling production durability</em> and <em>reaching online customers</em>.</p>
+      <br>
+      <p>By implementing <strong>applied physics stress analysis</strong> in selecting fabric materials and integrating <strong>AI-assisted marketing tools</strong>, Aling Rosa transformed her small workshop into a modern, sustainable community microenterprise.</p>
+    </section>
+
+    <!-- Section 2: Physics Science Concept -->
+    <section id="physics">
+      <h2>🔬 Applied Physics: Tensile Strength & Material Mechanics</h2>
+      <p>To ensure business sustainability, products (bags and clothing) must resist mechanical failure under stress. Tensile Stress ($\sigma$) is calculated by dividing applied Force ($F$) by the material's Cross-Sectional Area ($A$):</p>
+      <br>
+      <p style="text-align: center; font-size: 1.2rem; font-weight: bold; color: var(--primary);">$\text{Tensile Stress } (\sigma) = \frac{\text{Force } (F)}{\text{Area } (A)}$</p>
+
+      <div class="sim-box">
+        <h3>Interactive Material Stress Simulator</h3>
+        <p>Adjust the force (load) applied to the bag fabric to calculate the stress in Megapascals (MPa):</p>
+        <br>
+        <div class="slider-group">
+          <label for="forceInput">Applied Load (Force in Newtons): <span id="forceVal">150</span> N</label>
+          <input type="range" id="forceInput" min="50" max="500" value="150" oninput="updatePhysics()">
+        </div>
+
+        <div class="slider-group">
+          <label for="areaInput">Fabric Thickness (Cross-Sectional Area in mm²): <span id="areaVal">10</span> mm²</label>
+          <input type="range" id="areaInput" min="2" max="25" value="10" oninput="updatePhysics()">
+        </div>
+
+        <p><strong>Calculated Stress:</strong> <span id="stressOutput" style="font-weight:bold; color:var(--primary);">15.00</span> MPa</p>
+        <p><strong>Material Status:</strong> <span id="statusOutput" style="font-weight:bold; color:var(--accent);">Optimal Durability (Safe)</span></p>
+
+        <div class="gauge-container">
+          <div id="gaugeFill" class="gauge-fill" style="width: 30%;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: AI Utilization -->
+    <section id="ai">
+      <h2>🤖 AI Marketing & Digital Business Readiness</h2>
+      <p>Microenterprises leverage AI tools (such as image generators and copywriters) to automate branding, create product ads, and increase sales conversion on digital platforms.</p>
+
+      <div class="ai-box">
+        <h3>Try the AI Ad Copy Generator Demo</h3>
+        <label for="productSelect">Select a Product Line:</label>
+        <select id="productSelect" style="padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc;">
+          <option value="bags">Handmade Heavy-Duty Eco-Bags</option>
+          <option value="clothes">Custom Printed Eco-Garments</option>
+          <option value="crafts">Barangay Artisan Souvenirs</option>
+        </select>
+        <button onclick="generateAICopy()">Generate AI Marketing Ad</button>
+
+        <div class="output-card" id="aiOutput">
+          Select a product and click generate to simulate AI ad creation!
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Survey Data -->
+    <section id="survey">
+      <h2>📊 Survey Results: Microenterprise Digital Readiness</h2>
+      <p>Data gathered from 5 local barangay microentrepreneurs regarding AI utilization and online business interest:</p>
+
+      <div style="margin-top: 1.5rem;">
+        <div class="chart-bar">
+          <div class="bar-label"><span>Interested in AI Marketing Tools</span><span>80%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width: 80%;"></div></div>
+        </div>
+
+        <div class="chart-bar">
+          <div class="bar-label"><span>Currently Selling on Online Marketplaces</span><span>60%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width: 60%;"></div></div>
+        </div>
+
+        <div class="chart-bar">
+          <div class="bar-label"><span>Desire Applied Physics / Science Quality Standards</span><span>100%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Group Directory -->
+    <section id="team">
+      <h2>👥 Group 4 Project Directory</h2>
+      <div class="team-grid">
+        <div class="member-card"><h4>Member 1</h4><p>Survey Specialist</p></div>
+        <div class="member-card"><h4>Member 2</h4><p>Data Visualizer</p></div>
+        <div class="member-card"><h4>Member 3</h4><p>Narrative Director</p></div>
+        <div class="member-card"><h4>Member 4</h4><p>Web Copywriter</p></div>
+        <div class="member-card"><h4>Member 5</h4><p>Physics Specialist</p></div>
+        <div class="member-card"><h4>Member 6</h4><p>AI Tech Specialist</p></div>
+        <div class="member-card"><h4>Member 7</h4><p>Lead Web Builder</p></div>
+        <div class="member-card"><h4>Member 8</h4><p>Visual Designer</p></div>
+        <div class="member-card"><h4>Member 9</h4><p>Media Lead</p></div>
+        <div class="member-card"><h4>Member 10</h4><p>Project Coordinator</p></div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Group 4 Community Entrepreneurship & Science Research Project. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Physics Stress Calculation Function
+    function updatePhysics() {
+      const force = parseFloat(document.getElementById('forceInput').value);
+      const area = parseFloat(document.getElementById('areaInput').value);
+      
+      document.getElementById('forceVal').innerText = force;
+      document.getElementById('areaVal').innerText = area;
+
+      const stress = (force / area).toFixed(2);
+      document.getElementById('stressOutput').innerText = stress;
+
+      const fillPercent = Math.min((stress / 50) * 100, 100);
+      const gaugeFill = document.getElementById('gaugeFill');
+      const statusOutput = document.getElementById('statusOutput');
+
+      gaugeFill.style.width = fillPercent + '%';
+
+      if (stress > 35) {
+        gaugeFill.style.backgroundColor = '#ef4444';
+        statusOutput.innerText = 'High Stress (Risk of Fabric Tear)';
+        statusOutput.style.color = '#ef4444';
+      } else if (stress > 20) {
+        gaugeFill.style.backgroundColor = '#f59e0b';
+        statusOutput.innerText = 'Moderate Stress (Good Durability)';
+        statusOutput.style.color = '#f59e0b';
+      } else {
+        gaugeFill.style.backgroundColor = '#10b981';
+        statusOutput.innerText = 'Optimal Durability (Safe)';
+        statusOutput.style.color = '#10b981';
+      }
+    }
+
+    // AI Copy Generator Function
+    function generateAICopy() {
+      const product = document.getElementById('productSelect').value;
+      const output = document.getElementById('aiOutput');
+
+      const copies = {
+        bags: '"✨ Engineered for strength! Our handmade eco-bags use physics-tested tensile fabrics to carry up to 20kg without tearing. Support local barangay artisans today! 🛍️ #SmartBusiness #SustainableFashion"',
+        clothes: '"👕 Style meets durability! Crafted with reinforced seams for maximum stress resistance. Elevate your wardrobe with local quality. Order online now! 🚀 #EcoGarments #Group4Innovation"',
+        crafts: '"🎨 Authentic local craftsmanship powered by community innovation. Perfect souvenirs made to last! Discover local barangay talent. 🌟 #SupportLocal #CommunityEnterprise"'
+      };
+
+      output.innerText = copies[product];
+    }
+  </script>
+</body>
+</html>
